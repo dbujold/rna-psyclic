@@ -1,0 +1,55 @@
+.node {
+  cursor: move;
+  fill: #ccc;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.node.fixed {
+  fill: #f00;
+}
+
+.node .pos_text {
+  stroke-width: 1px;
+    font-size: 0.5em;
+    font-family: "Courier New", courier, monospace;
+}
+
+.node .res_text {
+    stroke-width: 1.5px;
+    font-size: 1em;
+    font-family: "Courier New", courier, monospace;
+}
+
+.link {
+  stroke: black;
+  stroke-width: 4px;
+}
+
+.link.linkL {
+  marker-mid: url(#marker_backbone);
+}
+
+.link.linkAS {
+  stroke: green;
+}
+
+.link.linkNAS {
+  stroke: red;
+}
+
+.link.linkP {
+  stroke: blue;
+}
+
+.hotSelectedCell {
+  background-color: #D5E9F7 !important;
+}
+
+.tooltip {
+  position: absolute;
+  width: 250px;
+  pointer-events: none;
+  border: 1px solid #CCCCCC;
+  background-color: white;
+}

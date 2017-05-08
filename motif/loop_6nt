@@ -1,0 +1,13 @@
+sequence (RNA X1 NNNNN N)
+relation (
+  X1 X6 { pairing or stack }
+  X1 X3 none
+  X1 X4 none
+  X1 X5 none
+  X2 X4 none
+  X2 X5 none
+  X2 X6 none
+  X3 X5 none
+  X3 X6 none
+  X4 X6 none
+)

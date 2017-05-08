@@ -1,0 +1,20 @@
+sequence (RNA V1 N)
+sequence (RNA W1 N)
+sequence (RNA X1 N)
+sequence (RNA Y1 N)
+sequence (RNA Z1 N)
+relation (
+  V1 W1 { pairing or stack or adjacent }
+  V1 X1 none
+  V1 Y1 none
+  V1 Z1 { pairing or stack or adjacent }
+
+  W1 X1 { pairing or stack or adjacent }
+  W1 Y1 none
+  W1 Z1 none
+
+  X1 Y1 { pairing or stack or adjacent }
+  X1 Z1 none
+
+  Y1 Z1 { pairing or stack or adjacent }
+)

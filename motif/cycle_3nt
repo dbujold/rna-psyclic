@@ -1,0 +1,8 @@
+sequence (RNA X1 N)
+sequence (RNA Y1 N)
+sequence (RNA Z1 N)
+relation (
+  X1 Y1 { pairing or stack or adjacent }
+  X1 Z1 { pairing or stack or adjacent }
+  Y1 Z1 { pairing or stack or adjacent }
+)

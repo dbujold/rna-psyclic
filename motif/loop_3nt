@@ -1,0 +1,4 @@
+sequence (RNA X1 NNN)
+relation (
+  X1 X3 { pairing or stack }
+)
