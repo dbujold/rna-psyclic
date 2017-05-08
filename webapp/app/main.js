@@ -66,8 +66,7 @@ function drawHandsOnTable(pData) {
 
         colHeaders: ['PDB', 'Descriptor', 'Residues', 'Motif Type'],
 
-        rowHeaders: false,
-        sortIndicator: true,
+        rowHeaders: true,
         multiSelect: false,
 
         afterSelection: function (r1, c1, r2, c2) {
