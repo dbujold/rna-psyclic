@@ -30,20 +30,38 @@ def main(argv):
 
 
 def makeCycleString(motif, graph):
-    graph_string = ""
+    cyclic_graph = []
 
     first_res_key = make_key(motif['residues'][0])
     second_res_key = make_key(motif['residues'][1])
     last_res_key = make_key(motif['residues'][len(motif['residues']) - 1])
 
-    graph_string = ''.join(graph[first_res_key][last_res_key]) + '-' + ''.join(graph[first_res_key][second_res_key])
+    str = ""
+    if (first_res_key in graph) and (last_res_key in graph[first_res_key]):
+        str += ''.join(graph[first_res_key][last_res_key])
+    if (last_res_key in graph) and (first_res_key in graph[last_res_key]):
+        str += ''.join(graph[last_res_key][first_res_key])
+    cyclic_graph.append(str)
+
+    str = ""
+    if (first_res_key in graph) and (second_res_key in graph[first_res_key]):
+        str += ''.join(graph[first_res_key][second_res_key])
+    if (second_res_key in graph) and (first_res_key in graph[second_res_key]):
+        str += ''.join(graph[second_res_key][first_res_key])
+    cyclic_graph.append(str)
 
     for x in range(1, len(motif['residues']) - 1):
+        str = ""
         key1 = make_key(motif['residues'][x])
         key2 = make_key(motif['residues'][x+1])
-        graph_string += '-' + ''.join(graph[key1][key2])
 
-    return graph_string
+        if (key1 in graph) and (key2 in graph[key1]):
+            str += ''.join(graph[key1][key2])
+        if (key2 in graph) and (key1 in graph[key2]):
+            str += ''.join(graph[key2][key1])
+        cyclic_graph.append(str)
+
+    return '-'.join(cyclic_graph)
 
 
 def make_key(residue):
